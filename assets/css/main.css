@@ -1,0 +1,111 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.parent {
+  background-color: #eee;
+  position: relative;
+  width: 220px;
+  height: 220px;
+  padding: 10px;
+  margin: 50px auto;
+}
+
+.parent::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  border: 10px solid;
+  border-color: red green blue black;
+}
+
+.parent span {
+  position: absolute;
+}
+
+.parent .x-ax {
+  top: -35px;
+}
+
+.parent .x-ax::before {
+  content: "";
+  background-color: #009688;
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  width: 80px;
+  height: 2px;
+  transform: translateY(-50%);
+}
+
+.parent .x-ax::after {
+  content: "";
+  background-color: #009688;
+  position: absolute;
+  top: 50%;
+  left: 130px;
+  width: 15px;
+  height: 15px;
+  transform: translateY(-50%);
+  clip-path: polygon(0 0, 50% 50%, 0 100%);
+}
+
+.parent .y-ax {
+  left: -35px;
+  writing-mode: vertical-lr;
+}
+
+.parent .y-ax::before {
+  content: "";
+  background-color: #009688;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  width: 2px;
+  height: 80px;
+  transform: translateX(-50%);
+}
+
+.parent .y-ax::after {
+  content: "";
+  background-color: #009688;
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  transform: translateX(-50%);
+  clip-path: polygon(100% 0%, 50% 50%, 0% 0%);
+}
+
+.c1 {
+  background-color: blue;
+  width: 200px;
+  height: 200px;
+  clip-path: circle(50px at 50% 50%);
+}
+
+.tmain {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+}
+
+.t1 {
+  background-color: blue;
+  clip-path: polygon(50% 0, 100% 100%, 0% 100%);
+}
+
+.t2 {
+  background-color: rebeccapurple;
+  clip-path: polygon(0% 0%, 50% 50%, 0% 100%);
+}
+
+.t3 {
+  background-color: violet;
+  clip-path: polygon(100% 0%, 50% 50%, 0% 0%);
+}
